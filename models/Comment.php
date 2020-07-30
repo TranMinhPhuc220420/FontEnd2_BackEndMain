@@ -16,6 +16,6 @@ class Comment extends Database
         $sql = self::$connect->prepare("INSERT INTO commtent(  USERNAME, CONTENT, ID_POST, DATE_UP) 
                                         VALUES (?, ?, ?, ?)");
         $sql->bind_param("ssis", $username, $content, $id_post, $date_up);
-        $sql->execute();
+        return $sql->execute();
     }
 }
